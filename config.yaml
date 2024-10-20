@@ -1,0 +1,13 @@
+log:
+  directory: "./logs"
+  file: "application.log"
+
+templates:
+  requirements: "./templates/software_require.md"
+  design: "./templates/software_detail_desgin.md"
+  code: "./templates/software_code.md"
+
+output:
+  base_directory: "./output"
+
+extension_mapping: "./utils/Extension_to_Language_Mapping.csv"
