@@ -1,7 +1,7 @@
 services:
-  Codexus:
+  codexus:
     image: codexus:1.0
-    container_name: Codexus
+    container_name: codexus
     working_dir: /app
     volumes:
       - .:/app
