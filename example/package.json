@@ -1,0 +1,31 @@
+{
+  "name": "markdown-editor",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest"
+  },
+  "dependencies": {
+    "next": "12.x",
+    "react": "17.x",
+    "react-dom": "17.x",
+    "remark": "13.x",
+    "remark-html": "13.x",
+    "mermaid": "8.x"
+  },
+  "devDependencies": {
+    "@types/node": "^14.x",
+    "@types/react": "17.x",
+    "autoprefixer": "^10.x",
+    "eslint": "7.x",
+    "eslint-config-next": "12.x",
+    "jest": "^27.x",
+    "postcss": "^8.x",
+    "tailwindcss": "^2.x",
+    "typescript": "4.x"
+  }
+}
