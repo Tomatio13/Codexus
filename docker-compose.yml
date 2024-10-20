@@ -1,0 +1,14 @@
+services:
+  Codexus:
+    image: codexus:1.0
+    container_name: Codexus
+    working_dir: /app
+    volumes:
+      - .:/app
+    build: .
+    command: streamlit run main.py
+    ports:
+      - 8501:8501
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+

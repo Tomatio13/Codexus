@@ -17,6 +17,7 @@
   - [必要要件](#必要要件)
   - [インストール](#インストール)
   - [使用方法](#使用方法)
+  - [Docker/Docker composeを用いた利用方法](#dockerdocker-composeを用いた利用方法)
   - [ファイル構成](#ファイル構成)
   - [謝意](#謝意)
   - [ライセンス](#ライセンス)
@@ -78,6 +79,10 @@
 
 4. API_KEYを.envファイルに記載してください:
    PROVIDERとMODELは必ず1つだけ指定して下さい。
+
+   ```bash
+   cp -p env.example .env
+   ```
    
    ```bash
    PROVIDER=ANTHROPIC
@@ -111,6 +116,50 @@
 4. プロンプトに従って要件定義書、詳細設計書、ソースコードを生成されます。フィードバックを提供してさらなる反復が可能です。
 
 5. 生成された要件定義書、詳細設計書、ソースコードを固めたzipファイルをダウンロードすることが可能です。
+
+## Docker/Docker composeを用いた利用方法
+
+1. リポジトリをクローンします:
+   ```bash
+   git clone https://github.com/Tomatio13/Codexus.git
+   cd Codexus
+   ```
+2. API_KEYを.envファイルに記載してください:
+   PROVIDERとMODELは必ず1つだけ指定して下さい。
+
+   ```bash
+   cp -p env.example .env
+   ```
+   
+   ```bash
+   PROVIDER=ANTHROPIC
+   MODEL=claude-3-5-sonnet-20240620
+   ANTHROPIC_API_KEY=<your claude api key>
+
+   # PROVIDER=OPENAI
+   # MODEL=gpt-4o
+   # OPENAI_API_KEY=<your openai api key>
+
+   #PROVIDER=OLLAMA
+   #MODEL=qwen2.5-coder:latest
+   #OLLAMA_BASE_URL=http://localhost:11434/v1/
+   #OLLAMA_MAX_TOKENS=256
+   ```
+   *注意事項*
+   ollamaは指定可能ですが、MODELのmax_tokensやnum_ctxが小さく
+   生成に失敗すること多いのでオススメしません。
+
+3. コンテナをbuildして下さい。
+   ```bash
+   docker compose build  
+   ```
+
+4. コンテナを起動します。
+   ```bash
+   docker compose up -d 
+   ```
+5. Webブラウザで`http://localhost:8501`にアクセスします。
+
 
 ## ファイル構成
 
